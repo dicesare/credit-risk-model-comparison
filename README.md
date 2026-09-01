@@ -24,6 +24,20 @@ pytest
 jupyter lab notebooks/model_comparison.ipynb
 ```
 
+## Case-study gallery
+
+The two substantial historical notebooks and both active branches are distilled into four reviewable questions:
+
+| Study | What it demonstrates |
+|---|---|
+| [01 — Model families](notebooks/01_model_families.ipynb) | logistic regression, nearest neighbours, decision trees and ensembles under one protocol |
+| [02 — Imbalance strategies](notebooks/02_imbalance_strategies.ipynb) | class weights versus SMOTE, evaluated only inside training folds |
+| [03 — Decision threshold](notebooks/03_decision_threshold.ipynb) | business-cost-aware threshold selection instead of defaulting to 0.5 |
+| [04 — Explainability and fairness](notebooks/04_explainability_fairness.ipynb) | global/local explanations, subgroup checks and governance boundaries |
+| [End-to-end comparison](notebooks/model_comparison.ipynb) | reproducible synthetic benchmark |
+
+IDE settings, pickles, course material and unlicensed customer data remain excluded. The separate `projet_4_V2` repository contained no additional implementation to preserve.
+
 ## Data
 
 The original experiment used Home Credit-style application features. No source dataset is redistributed. Use an authorized copy of a clearly licensed dataset and record its version in `data/README.md`.
@@ -35,3 +49,4 @@ This is an educational comparison, not a lending decision system. A production c
 ## License
 
 Code is released under the [MIT License](LICENSE); datasets retain their own terms.
+
