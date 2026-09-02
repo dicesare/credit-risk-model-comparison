@@ -36,6 +36,24 @@ The two substantial historical notebooks and both active branches are distilled 
 | [04 — Explainability and fairness](notebooks/04_explainability_fairness.ipynb) | global/local explanations, subgroup checks and governance boundaries |
 | [End-to-end comparison](notebooks/model_comparison.ipynb) | reproducible synthetic benchmark |
 
+## Historical evidence, re-audited with current standards
+
+The 33-cell V2 notebook contains 53 stored outputs and 22 rendered figures. It evaluates logistic regression, Elastic Net, decision trees, Random Forest, KNN and XGBoost after iterative imputation, scaling and SMOTE.
+
+Verified historical outputs include:
+
+| Experiment | Recorded result | Modern interpretation |
+|---|---:|---|
+| Logistic regression ROC analysis | AUROC 0.729 | sensitivity 0.95 required a threshold of 0.25 and specificity fell to 0.22 |
+| Logistic grid search | CV AUROC 0.736 ± 0.002 | stable linear baseline |
+| Elastic Net grid search | CV AUROC 0.736 ± 0.002 | regularisation added complexity without measurable gain |
+| KNN grid search | best CV AUROC 0.970 | must be rerun with fold-contained resampling before promotion |
+| XGBoost grid search | best CV AUROC 0.977 | large fold variance and preprocessing protocol require audit |
+
+![Historical model search](docs/assets/model-search.svg)
+
+The [experiment audit](docs/experiment_audit.md) identifies stale prediction variables, incorrect ROC-model reuse and validation risks, then maps them to the corrected public pipeline. This demonstrates not only modelling breadth but the ability to review legacy ML rigorously.
+
 IDE settings, pickles, course material and unlicensed customer data remain excluded. The separate `projet_4_V2` repository contained no additional implementation to preserve.
 
 ## Data
